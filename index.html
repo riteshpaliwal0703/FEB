@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Vasu ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+  color: #4b1c2f;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+p {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  animation: fall 6s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+.photos img {
+  width: 220px;
+  border-radius: 15px;
+  margin: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+button {
+  background: #b30059;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background: #800040;
+}
+</style>
+</head>
+
+<body>
+
+<section>
+  <h1>Vasu ❤️</h1>
+  <p>
+    Hi Vasu…  
+    This is not just a website.  
+    This is every feeling I struggle to say in words.
+  </p>
+</section>
+
+<section>
+  <h1>Why You Are Special</h1>
+  <p>
+    Tula mahit ahe ka?  
+    Tu majhya ayushyat ali ani sagla kahi shant zal.  
+    Tujha hasna, tujha bolna, ani tu asach asna —  
+    it means everything to me.
+  </p>
+</section>
+
+<section class="photos">
+  <h1>Us ✨</h1>
+  <!-- Replace src with your image names -->
+  <img src="photo1.jpg">
+  <img src="photo2.jpg">
+  <img src="photo3.jpg">
+  <p>
+    Photos perfect nasle tari,  
+    moment perfect hota ❤️
+  </p>
+</section>
+
+<section>
+  <h1>One Question…</h1>
+  <p>
+    Vasu,  
+    will you be my Valentine?  
+    Today, tomorrow, and always 💖
+  </p>
+  <button onclick="alert('I Love You Vasu ❤️')">YES ❤️</button>
+</section>
+
+<script>
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
