@@ -5,41 +5,99 @@
 <title>For Vasu ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
+
 body {
   margin: 0;
-  font-family: 'Georgia', serif;
-  background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
-  color: #4b1c2f;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1a001a, #4b004b, #800040);
+  color: #fff;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 section {
   min-height: 100vh;
-  padding: 50px 20px;
+  padding: 60px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
 }
 
 p {
-  max-width: 600px;
-  font-size: 1.1rem;
-  line-height: 1.8;
+  max-width: 700px;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #f5d6e6;
+}
+
+.photos img {
+  width: 220px;
+  border-radius: 15px;
+  margin: 15px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease;
+}
+
+.photos img:hover {
+  transform: scale(1.08);
+}
+
+.buttons {
+  margin-top: 30px;
+  position: relative;
+}
+
+button {
+  padding: 15px 35px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+
+.yes-btn {
+  background: #ff4da6;
+  color: white;
+}
+
+.yes-btn:hover {
+  background: #ff1a8c;
+  transform: scale(1.1);
+}
+
+.no-btn {
+  background: #444;
+  color: white;
+  position: absolute;
 }
 
 .heart {
   position: fixed;
   top: -10px;
   font-size: 20px;
-  animation: fall 6s linear infinite;
+  animation: fall linear infinite;
   opacity: 0.8;
 }
 
@@ -50,27 +108,6 @@ p {
   }
 }
 
-.photos img {
-  width: 220px;
-  border-radius: 15px;
-  margin: 10px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-button {
-  background: #b30059;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1rem;
-  border-radius: 30px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-button:hover {
-  background: #800040;
-}
 </style>
 </head>
 
@@ -81,43 +118,84 @@ button:hover {
   <p>
     Hi Vasu…  
     This is not just a website.  
-    This is every feeling I struggle to say in words.
+    This is every emotion I feel but struggle to say when you’re in front of me.
   </p>
 </section>
 
 <section>
-  <h1>Why You Are Special</h1>
+  <h1>You Changed Everything</h1>
   <p>
-    Tula mahit ahe ka?  
-    Tu majhya ayushyat ali ani sagla kahi shant zal.  
-    Tujha hasna, tujha bolna, ani tu asach asna —  
-    it means everything to me.
+    Tula mahit ahe ka…  
+    Tu majhya life madhye ali ani sagla different zal.  
+    Ordinary days suddenly special zale.  
+    Random moments meaningful zale.
+  </p>
+  <p>
+    Tujha ek simple message suddha majhya mood la completely change karto.  
+    Tu hasta tevha mala world perfect vatato.  
+    Ani honestly… tu ashich rahili tari mala sagla milel.
+  </p>
+</section>
+
+<section>
+  <h1>What I Feel For You</h1>
+  <p>
+    He attraction nahi ahe.  
+    He timepass nahi ahe.  
+    He kahi temporary feeling pan nahi ahe.
+  </p>
+  <p>
+    He shant prem ahe…  
+    je loud nahi pan deep ahe.  
+    Je show off nahi pan real ahe.  
+    Je words madhe explain hot nahi pan heart madhe full ahe.
   </p>
 </section>
 
 <section class="photos">
   <h1>Us ✨</h1>
-  <!-- Replace src with your image names -->
   <img src="photo1.jpg">
   <img src="photo2.jpg">
   <img src="photo3.jpg">
   <p>
-    Photos perfect nasle tari,  
-    moment perfect hota ❤️
+    Photos perfect nasle tari…  
+    Moment perfect hota.  
+    Ani tu tar always perfect ahes ❤️
   </p>
 </section>
 
 <section>
-  <h1>One Question…</h1>
+  <h1>One Honest Question…</h1>
   <p>
-    Vasu,  
-    will you be my Valentine?  
-    Today, tomorrow, and always 💖
+    Vasu…  
+    Will you be my Valentine?  
+    Aaj, udya, ani forever?
   </p>
-  <button onclick="alert('I Love You Vasu ❤️')">YES ❤️</button>
+
+  <div class="buttons">
+    <button class="yes-btn" onclick="sayYes()">YES ❤️</button>
+    <button class="no-btn" onmouseover="moveButton()">NO 💔</button>
+  </div>
 </section>
 
 <script>
+
+// Reveal on scroll
+const sections = document.querySelectorAll("section");
+
+function revealSections() {
+  const triggerBottom = window.innerHeight * 0.85;
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    if (sectionTop < triggerBottom) {
+      section.classList.add("show");
+    }
+  });
+}
+window.addEventListener("scroll", revealSections);
+revealSections();
+
+// Floating hearts
 function createHeart() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
@@ -130,8 +208,30 @@ function createHeart() {
     heart.remove();
   }, 6000);
 }
-
 setInterval(createHeart, 300);
+
+// YES button
+function sayYes() {
+  document.body.innerHTML = `
+    <section style="opacity:1; transform:none;">
+      <h1>She Said YES ❤️</h1>
+      <p>
+        Best feeling in the world.  
+        I promise to protect your smile forever.
+      </p>
+    </section>
+  `;
+}
+
+// NO button runs away
+function moveButton() {
+  const button = document.querySelector(".no-btn");
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 50);
+  button.style.left = x + "px";
+  button.style.top = y + "px";
+}
+
 </script>
 
 </body>
