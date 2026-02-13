@@ -174,7 +174,7 @@ button {
 
   <div class="buttons">
     <button class="yes-btn" onclick="sayYes()">YES ❤️</button>
-    <button class="no-btn" onmouseover="moveButton()">NO 💔</button>
+
   </div>
 </section>
 
@@ -223,16 +223,10 @@ function sayYes() {
   `;
 }
 
-// NO button runs away
-function moveButton() {
-  const button = document.querySelector(".no-btn");
-  const x = Math.random() * (window.innerWidth - 100);
-  const y = Math.random() * (window.innerHeight - 50);
-  button.style.left = x + "px";
-  button.style.top = y + "px";
-}
+
 
 </script>
 
 </body>
 </html>
+
